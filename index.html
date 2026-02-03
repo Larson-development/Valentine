@@ -1,0 +1,62 @@
+Larson-development/Valentine<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Vil du være min Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #ffe6ea;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #d6336c;
+        }
+        .btn {
+            padding: 15px 30px;
+            margin: 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        #no {
+            background-color: #adb5bd;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vil du være min Valentine? ❤️</h1>
+
+    <button id="yes" class="btn">Ja</button>
+    <button id="no" class="btn">Nej</button>
+
+    <script>
+        const noBtn = document.getElementById("no");
+        const yesBtn = document.getElementById("yes");
+
+        // Når man trykker JA
+        yesBtn.onclick = () => {
+            document.body.innerHTML = "<h1>Yay! Jeg vidste du ville sige ja ❤️🥰</h1>";
+        };
+
+        // Når man prøver at trykke NEJ (knappen flytter sig)
+        noBtn.onmouseover = () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        };
+    </script>
+
+</body>
+</html>
